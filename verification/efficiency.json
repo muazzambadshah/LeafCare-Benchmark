@@ -1,0 +1,75 @@
+{
+  "hardware": {
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13420H",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "torch": "2.15.0+cu132",
+    "os": "WSL2 Ubuntu on Windows 11 laptop"
+  },
+  "protocol": "batch 1, 224x224, FP32, eval mode, median of 100 runs after 20 warm-up; seed-42 checkpoints; PyTorch eager, no export or quantization",
+  "models": {
+    "mobilenet_v3_small": {
+      "params_M": 1.669,
+      "fp32_weights_MB": 6.36,
+      "checkpoint_file_MB": 6.49,
+      "cpu_1thread_ms": 4.15,
+      "cpu_4thread_ms": 3.87,
+      "gpu_ms": 5.61
+    },
+    "phytoedge_head_only": {
+      "params_M": 1.096,
+      "fp32_weights_MB": 4.18,
+      "checkpoint_file_MB": 4.31,
+      "cpu_1thread_ms": 4.91,
+      "cpu_4thread_ms": 4.68,
+      "gpu_ms": 4.26
+    },
+    "phytoedge_attention": {
+      "params_M": 1.18,
+      "fp32_weights_MB": 4.5,
+      "checkpoint_file_MB": 4.63,
+      "cpu_1thread_ms": 6.03,
+      "cpu_4thread_ms": 5.49,
+      "gpu_ms": 4.69
+    },
+    "phytoedge_fusion": {
+      "params_M": 1.457,
+      "fp32_weights_MB": 5.56,
+      "checkpoint_file_MB": 5.69,
+      "cpu_1thread_ms": 4.72,
+      "cpu_4thread_ms": 4.75,
+      "gpu_ms": 3.56
+    },
+    "phytoedge_net": {
+      "params_M": 1.541,
+      "fp32_weights_MB": 5.88,
+      "checkpoint_file_MB": 6.01,
+      "cpu_1thread_ms": 4.57,
+      "cpu_4thread_ms": 5.3,
+      "gpu_ms": 4.16
+    },
+    "efficientnet_b0": {
+      "params_M": 4.196,
+      "fp32_weights_MB": 16.01,
+      "checkpoint_file_MB": 16.28,
+      "cpu_1thread_ms": 24.03,
+      "cpu_4thread_ms": 18.18,
+      "gpu_ms": 5.05
+    },
+    "convnext_tiny": {
+      "params_M": 27.933,
+      "fp32_weights_MB": 106.56,
+      "checkpoint_file_MB": 106.61,
+      "cpu_1thread_ms": 103.84,
+      "cpu_4thread_ms": 57.03,
+      "gpu_ms": 3.87
+    },
+    "yolo26n": {
+      "params_M": 1.719,
+      "fp32_weights_MB": 6.56,
+      "checkpoint_file_MB": 6.67,
+      "cpu_1thread_ms": 7.47,
+      "cpu_4thread_ms": 5.46,
+      "gpu_ms": 3.38
+    }
+  }
+}

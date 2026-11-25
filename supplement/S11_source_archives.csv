@@ -1,0 +1,9 @@
+archive,identified_source,images,labels
+archive (20),"Compilation assembled by the first author from public Kaggle image sets (MasterDataset); PlantVillage-derived classes plus cotton, groundnut, sugarcane, wheat, rice, pumpkin and lemon; constituent download pages not recorded",122428,84
+dataset - Copy,"PlantCity, Islamia College Peshawar, Mendeley Data, doi:10.17632/w8kh2xkspx.1",28649,51
+archive (16),Compilation assembled by the first author from public Kaggle image sets (PlantDiseasesDataset): PlantVillage-derived classes plus citrus classes; constituent download pages not recorded,17221,37
+archive (13),"PlantVillage, Kaggle mirror (tomato, potato and pepper classes)",7173,14
+leaf_dataset_labeled 12,Photographed by the first author, August 2026 (healthy fruit-tree leaves),2380,4
+archive (14),"PlantDoc, Kaggle mirror; 1,000 images matched to the GitHub release by SHA-256",1631,15
+archive (17),"Chouhan et al. leaf database, Mendeley Data, doi:10.17632/hb74ynkjcn.1 (healthy classes only)",1189,11
+leaf data,"Photographed by the first author, Battagram, Khyber Pakhtunkhwa, Pakistan, August 2026",1048,10

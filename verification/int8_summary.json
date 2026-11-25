@@ -1,0 +1,59 @@
+{
+  "protocol": "onnxruntime CPU, 1 intra-op thread, batch 1; static QDQ INT8 (per-channel weights); calibrated on calibration-partition images (300 for the first four models, 150 for the rest); accuracy on the first 3,000 (first four models) or 1,000 (others) test images; seed-42 checkpoints",
+  "models": {
+    "mobilenet_v3_small": {
+      "fp32_MB": 6.37,
+      "int8_MB": 1.91,
+      "fp32_ms_1thr": 1.78,
+      "int8_ms_1thr": 1.96,
+      "fp32_acc_3000": 0.969,
+      "int8_acc_3000": 0.025333333333333333
+    },
+    "phytoedge_head_only": {
+      "fp32_MB": 4.19,
+      "int8_MB": 1.35,
+      "fp32_ms_1thr": 1.64,
+      "int8_ms_1thr": 1.89,
+      "fp32_acc_3000": 0.9696666666666667,
+      "int8_acc_3000": 0.038
+    },
+    "phytoedge_attention": {
+      "fp32_MB": 4.51,
+      "int8_MB": 1.46,
+      "fp32_ms_1thr": 1.67,
+      "int8_ms_1thr": 1.95,
+      "fp32_acc_3000": 0.9626666666666667,
+      "int8_acc_3000": 0.012
+    },
+    "efficientnet_b0": {
+      "fp32_MB": 16.0,
+      "int8_MB": 4.85,
+      "fp32_ms_1thr": 12.72,
+      "int8_ms_1thr": 7.89,
+      "fp32_acc_3000": 0.9823333333333333,
+      "int8_acc_3000": 0.6216666666666667
+    },
+    "phytoedge_fusion": {
+      "error": "SymbolicValueError(\"Unsupported: ONNX export of operator adaptive pooling, since output_size is not constant.. Please feel free to request support or submit a pull request on PyTorch GitHub: https://github.com/pytorch/pytorch/issues  [Caused by the value '380 defined in (%380 : Float(*, 48, 14, 14, "
+    },
+    "phytoedge_net": {
+      "error": "SymbolicValueError(\"Unsupported: ONNX export of operator adaptive pooling, since output_size is not constant.. Please feel free to request support or submit a pull request on PyTorch GitHub: https://github.com/pytorch/pytorch/issues  [Caused by the value '385 defined in (%385 : Float(*, 48, 14, 14, "
+    },
+    "convnext_tiny": {
+      "fp32_MB": 106.64,
+      "int8_MB": 27.41,
+      "fp32_ms_1thr": 90.29,
+      "int8_ms_1thr": 48.76,
+      "fp32_acc_3000": 0.99,
+      "int8_acc_3000": 0.992
+    },
+    "yolo26n": {
+      "fp32_MB": 6.58,
+      "int8_MB": 1.89,
+      "fp32_ms_1thr": 4.59,
+      "int8_ms_1thr": 2.3,
+      "fp32_acc_3000": 0.984,
+      "int8_acc_3000": 0.968
+    }
+  }
+}

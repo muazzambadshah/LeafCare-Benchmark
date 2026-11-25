@@ -1,0 +1,21 @@
+{
+  "images": 181719,
+  "groups": 176383,
+  "cosine_edges": 5399,
+  "threshold": 0.99,
+  "maximum_group_images": 7,
+  "split_counts": {
+    "train": 127237,
+    "val": 18176,
+    "calibration": 18158,
+    "test": 18148
+  },
+  "missing_labels": {
+    "train": [],
+    "val": [],
+    "calibration": [],
+    "test": []
+  },
+  "precision": "Normalized descriptors, strict float32 matrix products; exact all-pairs threshold graph",
+  "limitations": "Similarity groups do not establish plant/session identity. Label conflicts and large components require review. No checkpoint was trained on this manifest yet. All historical files unchanged."
+}

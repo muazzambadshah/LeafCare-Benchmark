@@ -1,0 +1,18 @@
+{
+    "pdf":  "manuscript/LeafCare_Manuscript_review_layout.pdf",
+    "pages":  10,
+    "method":  "every page rendered with pymupdf at 75-90 dpi and inspected",
+    "fixed":  [
+                  "wide figures unreadable in two-column -\u003e single-column review layout",
+                  "clipped x-label on Fig.5",
+                  "bar charts with truncated axes -\u003e dot plots",
+                  "ablation table column wrapping",
+                  "incorrect macro-F1 ordering sentence",
+                  "diagram text overflow"
+              ],
+    "checked_at":  "2026-11-16T01:44:19.2428609+05:00",
+    "remaining":  [
+                      "IEEEtran source not compiled (no LaTeX on machine)",
+                      "references.bib uses @misc entries"
+                  ]
+}

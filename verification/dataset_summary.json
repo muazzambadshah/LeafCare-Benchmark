@@ -1,0 +1,22 @@
+{
+  "images": 181719,
+  "labels": 147,
+  "split_counts": {
+    "train": 127237,
+    "val": 18176,
+    "calibration": 18158,
+    "test": 18148
+  },
+  "source_containers": 8,
+  "groups": 176383,
+  "non_singleton_groups": 5139,
+  "test_groups": 17629,
+  "class_total_min": 39,
+  "class_total_median": 767.0,
+  "class_total_max": 5777,
+  "test_support_min": 4,
+  "test_support_median": 77.0,
+  "test_support_max": 578,
+  "healthy_labels": 37,
+  "manifest_sha256": "3a791d98f05506375b6fb26504a66897319c362e0667b251d570f9fe2f9cc69f"
+}

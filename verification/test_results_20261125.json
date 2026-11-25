@@ -1,0 +1,453 @@
+{
+  "environment": {
+    "date": "2026-11-25T10:00:53",
+    "torch": "2.15.0+cu132",
+    "device": "cuda",
+    "python": "3.11.15"
+  },
+  "passed": 16,
+  "failed": 0,
+  "total": 16,
+  "tests": [
+    {
+      "id": "S1",
+      "name": "All 24 run folders complete",
+      "check": "5 non-empty files per run; history.json = 10 epochs",
+      "passed": true,
+      "detail": "24 runs, 5 files each, 10 epochs each. Problems: none",
+      "seconds": 3.4
+    },
+    {
+      "id": "S2",
+      "name": "Every best.pt loads and runs one image",
+      "check": "build()+load_state_dict+1-image forward, shape (1,147), no NaN/inf",
+      "passed": true,
+      "detail": "device=cuda; 24/24 best.pt load via train_matched.build(), output (1,147), finite, class map matches. Problems: none",
+      "seconds": 0.0
+    },
+    {
+      "id": "S3",
+      "name": "Web app serves page and predicts",
+      "check": "GET / = 200; POST /predict one image -> 3 predictions, sum <= 100% (port 8611)",
+      "passed": true,
+      "detail": "GET / -> 200; POST /predict -> 200, 3 predictions, top3 confidence sum 99.9% (true label alstonia_scholaris_healthy, top1 alstonia_scholaris_healthy)",
+      "seconds": 0.5
+    },
+    {
+      "id": "S4",
+      "name": "Paper ZIP checksum and integrity",
+      "check": "sha256 equals .sha256 file; zipfile.testzip() is None",
+      "passed": true,
+      "detail": "sha256 matches (91deee29d609041b...); testzip bad member: None",
+      "seconds": 0.4
+    },
+    {
+      "id": "P1",
+      "name": "Split integrity",
+      "check": "each duplicate_group in 1 split; test=18,148; 147 labels in all splits; no train/test image hash overlap",
+      "passed": true,
+      "detail": "groups 176383, groups spanning >1 split: 0; test images 18148; all 147 labels in every split: True; train/test shared image_sha256: 0; split sizes: {'train': 127237, 'val': 18176, 'test': 18148, 'calibration': 18158}",
+      "seconds": 1.1
+    },
+    {
+      "id": "P2",
+      "name": "Preprocessing parity (app vs training eval)",
+      "check": "Resize256+CenterCrop224+ImageNet-normalise tensors identical on 8 images",
+      "passed": true,
+      "detail": "app transform vs train_matched eval transform on 8 test images: max abs pixel difference 0.0",
+      "seconds": 3.6
+    },
+    {
+      "id": "P3",
+      "name": "Re-inference reproduces saved predictions",
+      "check": "fresh forward on first 200 test images; argmax equals test_logits.npz (<=1 mismatch/run)",
+      "passed": true,
+      "detail": "24 runs x first 200 test images; max mismatches in any run 0; worst max|logit diff| 7.63e-06. Problems: none",
+      "seconds": 8.7
+    },
+    {
+      "id": "P4",
+      "name": "Metrics recompute (logits vs json vs paper CSV)",
+      "check": "accuracy & macro-F1 from saved logits == test_metrics.json == paper model_comparison.csv, tol 1e-9",
+      "passed": true,
+      "detail": "24 runs: accuracy/macro-F1 recomputed from test_logits.npz equal test_metrics.json and model_comparison.csv (tol 1e-9); image/label order matches manifest. Problems: none",
+      "seconds": 9.1
+    },
+    {
+      "id": "P5",
+      "name": "Paper numbers (mean \u00b1 SD)",
+      "check": "recompute mean/SD(ddof=1) from 3 seeds; match CSV (1e-9) and manuscript text (2 dp)",
+      "passed": true,
+      "detail": "8 models x (accuracy, macro-F1): mean and sample SD (ddof=1) match multi_seed_summary.csv and appear in the .tex to 2 decimals. Problems: none",
+      "seconds": 0.1
+    },
+    {
+      "id": "P6",
+      "name": "App end-to-end vs saved logits",
+      "check": "20 evenly spaced test images through HTTP /predict; top-1 == saved EffNet-B0 seed-42 argmax",
+      "passed": true,
+      "detail": "20 fixed test images (indices [0, 955, 1910, 2865, 3820, 4775, 5730, 6685, 7640, 8595, 9551, 10506, 11461, 12416, 13371, 14326, 15281, 16236, 17191, 18147]); app top-1 equals saved EfficientNet-B0 seed-42 argmax for 20/20; app correct vs true label 20/20. Problems: none",
+      "seconds": 1.4
+    },
+    {
+      "id": "P7",
+      "name": "App ships the intended checkpoint",
+      "check": "sha256(app model/best.pt) == efficientnet_b0_seed42/best.pt",
+      "passed": true,
+      "detail": "app model/best.pt sha256 equals efficientnet_b0_seed42/best.pt (eb1bf42ee9556f71...)",
+      "seconds": 0.5
+    },
+    {
+      "id": "F1",
+      "name": "build() for all 8 models gives 147 outputs",
+      "check": "forward (2,3,224,224) on untrained model, last dim 147",
+      "passed": true,
+      "detail": "build() output shapes: {'mobilenet_v3_small': (2, 147), 'phytoedge_head_only': (2, 147), 'phytoedge_attention': (2, 147), 'phytoedge_fusion': (2, 147), 'phytoedge_net': (2, 147), 'efficientnet_b0': (2, 147), 'convnext_tiny': (2, 147), 'yolo26n': (2, 147)}. Problems: none",
+      "seconds": 1.0
+    },
+    {
+      "id": "F2",
+      "name": "PhytoEdgeNet variants",
+      "check": "4 variants give (2,147); attention & fusion have more params than head_only",
+      "passed": true,
+      "detail": "parameters: {'head_only': 1096499, 'attention': 1180189, 'fusion': 1457075, 'full': 1540765}. Problems: none",
+      "seconds": 0.2
+    },
+    {
+      "id": "F3",
+      "name": "Images dataset class",
+      "check": "shape, label index, normalisation rule (yolo26n none)",
+      "passed": true,
+      "detail": "Images(): shape (3,224,224), correct label index; yolo26n values in [0,1], others ImageNet-normalised. Problems: none",
+      "seconds": 2.4
+    },
+    {
+      "id": "F4",
+      "name": "evaluate() function",
+      "check": "tiny fake model + loader: logits, labels, macro-F1 equal sklearn reference",
+      "passed": true,
+      "detail": "evaluate() macro-F1 0.000680 vs sklearn 0.000680; logits and labels returned in order",
+      "seconds": 0.0
+    },
+    {
+      "id": "F5",
+      "name": "App predict(): input handling",
+      "check": "non-image -> 400; PNG/JPG/gray/RGBA/6000x6000 OK; >15 MB rejected; server still alive",
+      "passed": true,
+      "detail": "results: {'non-image text file': 400, 'non-image error text': '{\"error\": \"cannot identify image file <_io.BytesIO object at 0x703fe44bf1f0>\"}', 'PNG RGB': 200, 'JPG RGB': 200, 'PNG grayscale': 200, 'PNG RGBA': 200, '6000x6000 JPEG (0.6 MB) seconds': 0.4, '6000x6000 JPEG': 200, '16 MB upload': \"BrokenPipeError(32, 'Broken pipe')\", '16 MB note': 'server rejected the upload (checks size before reading) but the client saw a connection reset instead of a readable 400 message'}. Problems: none",
+      "seconds": 0.7
+    }
+  ],
+  "per_run": [
+    {
+      "run": "mobilenet_v3_small_seed42",
+      "accuracy": 0.9554220850782456,
+      "macro_f1": 0.9138141208037859,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "mobilenet_v3_small_seed43",
+      "accuracy": 0.9560282124752039,
+      "macro_f1": 0.921978307852421,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "mobilenet_v3_small_seed44",
+      "accuracy": 0.9564139299096319,
+      "macro_f1": 0.9231001288648356,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "phytoedge_head_only_seed42",
+      "accuracy": 0.9518955256777606,
+      "macro_f1": 0.9147357959232841,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_head_only_seed43",
+      "accuracy": 0.945724046726912,
+      "macro_f1": 0.9080159227841452,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_head_only_seed44",
+      "accuracy": 0.9485342737491734,
+      "macro_f1": 0.9126679034643279,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_attention_seed42",
+      "accuracy": 0.9496914260524576,
+      "macro_f1": 0.9113770610815041,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_attention_seed43",
+      "accuracy": 0.9572955697597532,
+      "macro_f1": 0.917762479327142,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_attention_seed44",
+      "accuracy": 0.9559731099845713,
+      "macro_f1": 0.9192540116734561,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_fusion_seed42",
+      "accuracy": 0.9521710381309235,
+      "macro_f1": 0.9105160221109441,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_fusion_seed43",
+      "accuracy": 0.9569098523253251,
+      "macro_f1": 0.9084236221380786,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_fusion_seed44",
+      "accuracy": 0.9548159576812872,
+      "macro_f1": 0.9213715484632602,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_net_seed42",
+      "accuracy": 0.9479281463522151,
+      "macro_f1": 0.9071754681149508,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_net_seed43",
+      "accuracy": 0.9514547057527,
+      "macro_f1": 0.9088436712198116,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "phytoedge_net_seed44",
+      "accuracy": 0.9506281683932114,
+      "macro_f1": 0.914603018256984,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 0.0
+    },
+    {
+      "run": "efficientnet_b0_seed42",
+      "accuracy": 0.9705201675115716,
+      "macro_f1": 0.9375157425506133,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 3.814697265625e-06
+    },
+    {
+      "run": "efficientnet_b0_seed43",
+      "accuracy": 0.9710160899272647,
+      "macro_f1": 0.9415822334924142,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 5.7220458984375e-06
+    },
+    {
+      "run": "efficientnet_b0_seed44",
+      "accuracy": 0.9710160899272647,
+      "macro_f1": 0.9435027874284624,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "convnext_tiny_seed42",
+      "accuracy": 0.967599735508045,
+      "macro_f1": 0.9364168687897871,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 3.814697265625e-06
+    },
+    {
+      "run": "convnext_tiny_seed43",
+      "accuracy": 0.9717324223054882,
+      "macro_f1": 0.940311200069905,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "convnext_tiny_seed44",
+      "accuracy": 0.9718426272867534,
+      "macro_f1": 0.9412232991891633,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 5.7220458984375e-06
+    },
+    {
+      "run": "yolo26n_seed42",
+      "accuracy": 0.958618029534935,
+      "macro_f1": 0.9246057575643196,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "yolo26n_seed43",
+      "accuracy": 0.9587282345162002,
+      "macro_f1": 0.9263569598753392,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    },
+    {
+      "run": "yolo26n_seed44",
+      "accuracy": 0.9509036808463742,
+      "macro_f1": 0.9220095145117279,
+      "reinference_mismatches_of_200": 0,
+      "reinference_max_logit_diff": 7.62939453125e-06
+    }
+  ],
+  "app_e2e_images": [
+    [
+      0,
+      "train/alstonia_scholaris_healthy/10e7c9034e06881583ec3e5a.jpg",
+      "alstonia_scholaris_healthy",
+      "alstonia_scholaris_healthy",
+      "alstonia_scholaris_healthy"
+    ],
+    [
+      955,
+      "train/bean_healthy/3c628277b8d4cc103f057aa5.jpg",
+      "bean_healthy",
+      "bean_healthy",
+      "bean_healthy"
+    ],
+    [
+      1910,
+      "train/cherry_powdery_mildew/8e105943f2888d349f2cbd33.jpg",
+      "cherry_powdery_mildew",
+      "cherry_powdery_mildew",
+      "cherry_powdery_mildew"
+    ],
+    [
+      2865,
+      "train/corn_fungal/215a0d37338aea331893e6eb.jpg",
+      "corn_fungal",
+      "corn_fungal",
+      "corn_fungal"
+    ],
+    [
+      3820,
+      "train/cotton_bacterial_blight/62e7c1176bcd72659bba5931.jpg",
+      "cotton_bacterial_blight",
+      "cotton_bacterial_blight",
+      "cotton_bacterial_blight"
+    ],
+    [
+      4775,
+      "train/grape_black_rot/ec6a10be70666bdb7df58d8d.jpg",
+      "grape_black_rot",
+      "grape_black_rot",
+      "grape_black_rot"
+    ],
+    [
+      5730,
+      "train/groundnut_healthy/43a8bf61ea29634506797731.jpg",
+      "groundnut_healthy",
+      "groundnut_healthy",
+      "groundnut_healthy"
+    ],
+    [
+      6685,
+      "train/lokat_healthy/b4d0ffd5b2eea56e3bd2b636.jpg",
+      "lokat_healthy",
+      "lokat_healthy",
+      "lokat_healthy"
+    ],
+    [
+      7640,
+      "train/potato_healthy/4bab39b67f6327b3f7ee6dc4.jpg",
+      "potato_healthy",
+      "potato_healthy",
+      "potato_healthy"
+    ],
+    [
+      8595,
+      "train/sugarcane_bacterial_blight/36bf7bec8651195cf425421e.jpg",
+      "sugarcane_bacterial_blight",
+      "sugarcane_bacterial_blight",
+      "sugarcane_bacterial_blight"
+    ],
+    [
+      9551,
+      "train/tomato_bacterial_spot/d6f7095f83cf079ef1b8a01d.jpg",
+      "tomato_bacterial_spot",
+      "tomato_bacterial_spot",
+      "tomato_bacterial_spot"
+    ],
+    [
+      10506,
+      "train/tomato_leaf_mold/3ab479cb2f261d778df48862.jpg",
+      "tomato_leaf_mold",
+      "tomato_leaf_mold",
+      "tomato_leaf_mold"
+    ],
+    [
+      11461,
+      "train/tomato_verticillium_wilt/aeac9f005e110d2fd127afb2.jpg",
+      "tomato_verticillium_wilt",
+      "tomato_verticillium_wilt",
+      "tomato_verticillium_wilt"
+    ],
+    [
+      12416,
+      "train/wheat_mite/29f177a6842196db788de807.jpg",
+      "wheat_mite",
+      "wheat_mite",
+      "wheat_mite"
+    ],
+    [
+      13371,
+      "val/grape_isariopsis_leaf_spot/5b01ed948913aeb329ed2c49.jpg",
+      "grape_isariopsis_leaf_spot",
+      "grape_isariopsis_leaf_spot",
+      "grape_isariopsis_leaf_spot"
+    ],
+    [
+      14326,
+      "val/tomato_yellow_leaf_curl_virus/63660c6247235fc8911ff24c.jpg",
+      "tomato_yellow_leaf_curl_virus",
+      "tomato_yellow_leaf_curl_virus",
+      "tomato_yellow_leaf_curl_virus"
+    ],
+    [
+      15281,
+      "calibration/groundnut_healthy/50c8a6db574bca279459126a.jpg",
+      "groundnut_healthy",
+      "groundnut_healthy",
+      "groundnut_healthy"
+    ],
+    [
+      16236,
+      "calibration/wheat_aphid/3005e97c5211d6bbb4d4e568.jpg",
+      "wheat_aphid",
+      "wheat_aphid",
+      "wheat_aphid"
+    ],
+    [
+      17191,
+      "test/groundnut_nutrition_deficiency/c8956b683aa84bf428d60853.jpg",
+      "groundnut_nutrition_deficiency",
+      "groundnut_nutrition_deficiency",
+      "groundnut_nutrition_deficiency"
+    ],
+    [
+      18147,
+      "test/wheat_yellow_rust/fe61f670f919c22b9bb8d22e.jpg",
+      "wheat_yellow_rust",
+      "wheat_yellow_rust",
+      "wheat_yellow_rust"
+    ]
+  ]
+}

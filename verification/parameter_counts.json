@@ -1,0 +1,14 @@
+{
+  "device": "cpu",
+  "note": "trainable parameters with 147-way head; not a latency or file-size measurement",
+  "parameters": {
+    "mobilenet_v3_small": 1668531,
+    "phytoedge_head_only": 1096499,
+    "phytoedge_attention": 1180189,
+    "phytoedge_fusion": 1457075,
+    "phytoedge_net": 1540765,
+    "efficientnet_b0": 4195855,
+    "convnext_tiny": 27933171,
+    "yolo26n": 1719411
+  }
+}

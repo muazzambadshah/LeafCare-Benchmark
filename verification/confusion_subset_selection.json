@@ -1,0 +1,15 @@
+{
+  "rule": "labels appearing in the most frequent off-diagonal confusions summed over all completed seed-42 models, taken in rank order until 10 unique labels; cell numbers are counts, shading is count / true-label support",
+  "labels": [
+    "tomato_spider_mites",
+    "tomato_target_spot",
+    "corn_cercospora_leaf_spot",
+    "corn_gray_leaf_spot",
+    "cotton_bacterial_blight",
+    "cotton_powdery_mildew",
+    "cotton_target_spot",
+    "wheat_aphid",
+    "wheat_mite",
+    "wheat_tan_spot"
+  ]
+}

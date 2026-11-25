@@ -1,0 +1,9 @@
+source_container,calibration,test,train,val,labels
+archive (13).zip,714,717,5023,719,14
+archive (14).zip,152,149,1147,183,15
+archive (16).zip,1728,1727,12038,1728,37
+archive (17).zip,116,115,843,115,11
+archive (20).zip,12193,12243,85765,12227,84
+dataset - Copy,2898,2844,20050,2857,51
+leaf data.zip,103,114,720,111,10
+leaf_dataset_labeled 12.zip,254,239,1651,236,4

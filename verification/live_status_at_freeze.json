@@ -1,0 +1,15 @@
+{
+    "training_process":  "alive (WSL train_matched.py --resume); not touched",
+    "active_step":  "200/3977",
+    "completed_runs":  8,
+    "active_epoch":  1,
+    "yolo26n_seed42":  {
+                           "accuracy":  0.958618029534935,
+                           "macro_f1":  0.92460575756431962,
+                           "complete_json":  "2026-11-16 01:40:03"
+                       },
+    "checked_at":  "2026-11-16T01:44:19.2428609+05:00",
+    "total_runs":  24,
+    "active_model":  "mobilenet_v3_small",
+    "active_seed":  43
+}

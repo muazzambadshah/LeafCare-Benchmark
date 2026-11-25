@@ -1,0 +1,537 @@
+{
+  "numbers": {
+    "efficientnet_b0_accuracy_mean_sd": {
+      "value": "97.09 \u00b1 0.03",
+      "source": "multi_seed_summary.csv"
+    },
+    "convnext_tiny_accuracy_mean_sd": {
+      "value": "97.04 \u00b1 0.24",
+      "source": "multi_seed_summary.csv"
+    },
+    "mobilenet_v3_small_accuracy_mean_sd": {
+      "value": "95.60 \u00b1 0.05",
+      "source": "multi_seed_summary.csv"
+    },
+    "mobilenet_v3_small_macro_f1_mean_sd": {
+      "value": "91.96 \u00b1 0.51",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_head_only_accuracy_mean_sd": {
+      "value": "94.87 \u00b1 0.31",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_head_only_macro_f1_mean_sd": {
+      "value": "91.18 \u00b1 0.34",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_attention_accuracy_mean_sd": {
+      "value": "95.43 \u00b1 0.41",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_attention_macro_f1_mean_sd": {
+      "value": "91.61 \u00b1 0.42",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_fusion_accuracy_mean_sd": {
+      "value": "95.46 \u00b1 0.24",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_fusion_macro_f1_mean_sd": {
+      "value": "91.34 \u00b1 0.70",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_net_accuracy_mean_sd": {
+      "value": "95.00 \u00b1 0.18",
+      "source": "multi_seed_summary.csv"
+    },
+    "phytoedge_net_macro_f1_mean_sd": {
+      "value": "91.02 \u00b1 0.39",
+      "source": "multi_seed_summary.csv"
+    },
+    "efficientnet_b0_macro_f1_mean_sd": {
+      "value": "94.09 \u00b1 0.31",
+      "source": "multi_seed_summary.csv"
+    },
+    "convnext_tiny_macro_f1_mean_sd": {
+      "value": "93.93 \u00b1 0.26",
+      "source": "multi_seed_summary.csv"
+    },
+    "yolo26n_accuracy_mean_sd": {
+      "value": "95.61 \u00b1 0.45",
+      "source": "multi_seed_summary.csv"
+    },
+    "yolo26n_macro_f1_mean_sd": {
+      "value": "92.43 \u00b1 0.22",
+      "source": "multi_seed_summary.csv"
+    },
+    "seeds_convnext_tiny_vs_efficientnet_b0": {
+      "value": "-0.29*, +0.07, +0.08",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_efficientnet_b0_vs_mobilenet_v3_small": {
+      "value": "+1.51*, +1.50*, +1.46*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_yolo26n_vs_mobilenet_v3_small": {
+      "value": "+0.32*, +0.27, -0.55*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_efficientnet_b0_vs_mobilenet_v3_small": {
+      "value": "+1.51 pp (95% interval +1.23 to +1.81)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_convnext_tiny_vs_efficientnet_b0": {
+      "value": "-0.29 pp (95% interval -0.56 to -0.03)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "efficientnet_b0_accuracy_pct": {
+      "value": "97.05",
+      "source": "model_comparison.csv"
+    },
+    "efficientnet_b0_macro_f1_pct": {
+      "value": "93.75",
+      "source": "model_comparison.csv"
+    },
+    "convnext_tiny_accuracy_pct": {
+      "value": "96.76",
+      "source": "model_comparison.csv"
+    },
+    "convnext_tiny_macro_f1_pct": {
+      "value": "93.64",
+      "source": "model_comparison.csv"
+    },
+    "yolo26n_accuracy_pct": {
+      "value": "95.86",
+      "source": "model_comparison.csv"
+    },
+    "yolo26n_macro_f1_pct": {
+      "value": "92.46",
+      "source": "model_comparison.csv"
+    },
+    "diff_yolo26n_vs_mobilenet_v3_small": {
+      "value": "+0.32 pp (95% interval +0.01 to +0.64)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "gap_min": {
+      "value": "3.1",
+      "source": "model_comparison.csv"
+    },
+    "gap_max": {
+      "value": "4.2",
+      "source": "model_comparison.csv"
+    },
+    "diff_phytoedge_attention_vs_phytoedge_head_only": {
+      "value": "-0.22 pp (95% interval -0.51 to +0.08)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_phytoedge_fusion_vs_phytoedge_head_only": {
+      "value": "+0.03 pp (95% interval -0.25 to +0.33)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_phytoedge_net_vs_phytoedge_head_only": {
+      "value": "-0.40 pp (95% interval -0.68 to -0.10)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_phytoedge_net_vs_phytoedge_fusion": {
+      "value": "-0.42 pp (95% interval -0.72 to -0.13)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_phytoedge_net_vs_phytoedge_attention": {
+      "value": "-0.18 pp (95% interval -0.48 to +0.14)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_phytoedge_head_only_vs_mobilenet_v3_small": {
+      "value": "-0.35 pp (95% interval -0.66 to -0.07)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "diff_phytoedge_net_vs_mobilenet_v3_small": {
+      "value": "-0.75 pp (95% interval -1.05 to -0.45)",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "phytoedge_head_only_macro_f1_pct": {
+      "value": "91.47",
+      "source": "model_comparison.csv"
+    },
+    "phytoedge_attention_macro_f1_pct": {
+      "value": "91.14",
+      "source": "model_comparison.csv"
+    },
+    "phytoedge_fusion_macro_f1_pct": {
+      "value": "91.05",
+      "source": "model_comparison.csv"
+    },
+    "phytoedge_net_macro_f1_pct": {
+      "value": "90.72",
+      "source": "model_comparison.csv"
+    },
+    "seeds_phytoedge_head_only_vs_mobilenet_v3_small": {
+      "value": "-0.35*, -1.03*, -0.79*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_phytoedge_attention_vs_phytoedge_head_only": {
+      "value": "-0.22, +1.16*, +0.74*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_phytoedge_fusion_vs_phytoedge_head_only": {
+      "value": "+0.03, +1.12*, +0.63*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_phytoedge_net_vs_phytoedge_head_only": {
+      "value": "-0.40*, +0.57*, +0.21",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_phytoedge_net_vs_phytoedge_fusion": {
+      "value": "-0.42*, -0.55*, -0.42*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "seeds_phytoedge_net_vs_mobilenet_v3_small": {
+      "value": "-0.75*, -0.46*, -0.58*",
+      "source": "paired_group_bootstrap.csv"
+    },
+    "plantdoc_mobilenet_v3_small_accuracy_147way": {
+      "value": "52.7 \u00b1 12.9",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_mobilenet_v3_small_macro_f1_147way": {
+      "value": "38.2 \u00b1 3.6",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_mobilenet_v3_small_accuracy_restricted_12way": {
+      "value": "65.7 \u00b1 10.5",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_mobilenet_v3_small_predicted_same_crop": {
+      "value": "88.2 \u00b1 3.6",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_head_only_accuracy_147way": {
+      "value": "33.3 \u00b1 6.3",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_head_only_macro_f1_147way": {
+      "value": "38.6 \u00b1 3.8",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_head_only_accuracy_restricted_12way": {
+      "value": "44.4 \u00b1 5.0",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_head_only_predicted_same_crop": {
+      "value": "87.0 \u00b1 3.0",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_attention_accuracy_147way": {
+      "value": "39.2 \u00b1 8.2",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_attention_macro_f1_147way": {
+      "value": "52.1 \u00b1 9.7",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_attention_accuracy_restricted_12way": {
+      "value": "54.1 \u00b1 6.8",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_attention_predicted_same_crop": {
+      "value": "85.3 \u00b1 3.9",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_fusion_accuracy_147way": {
+      "value": "36.6 \u00b1 6.7",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_fusion_macro_f1_147way": {
+      "value": "41.4 \u00b1 3.7",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_fusion_accuracy_restricted_12way": {
+      "value": "53.4 \u00b1 9.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_fusion_predicted_same_crop": {
+      "value": "81.1 \u00b1 5.0",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_net_accuracy_147way": {
+      "value": "33.3 \u00b1 10.7",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_net_macro_f1_147way": {
+      "value": "45.1 \u00b1 2.7",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_net_accuracy_restricted_12way": {
+      "value": "44.2 \u00b1 9.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_phytoedge_net_predicted_same_crop": {
+      "value": "81.3 \u00b1 1.8",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_efficientnet_b0_accuracy_147way": {
+      "value": "49.9 \u00b1 7.1",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_efficientnet_b0_macro_f1_147way": {
+      "value": "60.3 \u00b1 8.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_efficientnet_b0_accuracy_restricted_12way": {
+      "value": "63.4 \u00b1 3.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_efficientnet_b0_predicted_same_crop": {
+      "value": "88.7 \u00b1 5.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_convnext_tiny_accuracy_147way": {
+      "value": "59.3 \u00b1 34.2",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_convnext_tiny_macro_f1_147way": {
+      "value": "58.6 \u00b1 9.2",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_convnext_tiny_accuracy_restricted_12way": {
+      "value": "71.9 \u00b1 25.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_convnext_tiny_predicted_same_crop": {
+      "value": "81.1 \u00b1 21.7",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_yolo26n_accuracy_147way": {
+      "value": "40.0 \u00b1 8.6",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_yolo26n_macro_f1_147way": {
+      "value": "49.0 \u00b1 5.0",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_yolo26n_accuracy_restricted_12way": {
+      "value": "54.8 \u00b1 7.5",
+      "source": "verification/plantdoc_external.json"
+    },
+    "plantdoc_yolo26n_predicted_same_crop": {
+      "value": "82.3 \u00b1 7.4",
+      "source": "verification/plantdoc_external.json"
+    },
+    "abst_mobilenet_v3_small_test_coverage": {
+      "value": "91.1 \u00b1 0.5",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_mobilenet_v3_small_test_acc_accepted": {
+      "value": "99.0 \u00b1 0.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_mobilenet_v3_small_plantdoc_coverage": {
+      "value": "31.0 \u00b1 9.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_mobilenet_v3_small_plantdoc_acc_accepted": {
+      "value": "63.8 \u00b1 17.9",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_mobilenet_v3_small_plantdoc_wrong_rejected": {
+      "value": "78.0 \u00b1 2.8",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_head_only_test_coverage": {
+      "value": "88.6 \u00b1 1.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_head_only_test_acc_accepted": {
+      "value": "99.0 \u00b1 0.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_head_only_plantdoc_coverage": {
+      "value": "18.0 \u00b1 2.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_head_only_plantdoc_acc_accepted": {
+      "value": "58.6 \u00b1 16.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_head_only_plantdoc_wrong_rejected": {
+      "value": "89.2 \u00b1 3.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_attention_test_coverage": {
+      "value": "90.7 \u00b1 1.4",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_attention_test_acc_accepted": {
+      "value": "99.0 \u00b1 0.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_attention_plantdoc_coverage": {
+      "value": "20.1 \u00b1 2.3",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_attention_plantdoc_acc_accepted": {
+      "value": "56.7 \u00b1 16.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_attention_plantdoc_wrong_rejected": {
+      "value": "86.1 \u00b1 2.5",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_fusion_test_coverage": {
+      "value": "91.2 \u00b1 0.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_fusion_test_acc_accepted": {
+      "value": "98.9 \u00b1 0.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_fusion_plantdoc_coverage": {
+      "value": "24.8 \u00b1 2.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_fusion_plantdoc_acc_accepted": {
+      "value": "61.8 \u00b1 4.4",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_fusion_plantdoc_wrong_rejected": {
+      "value": "85.0 \u00b1 1.9",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_net_test_coverage": {
+      "value": "89.6 \u00b1 0.5",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_net_test_acc_accepted": {
+      "value": "99.0 \u00b1 0.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_net_plantdoc_coverage": {
+      "value": "18.2 \u00b1 6.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_net_plantdoc_acc_accepted": {
+      "value": "52.2 \u00b1 11.7",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_phytoedge_net_plantdoc_wrong_rejected": {
+      "value": "87.4 \u00b1 2.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_efficientnet_b0_test_coverage": {
+      "value": "95.3 \u00b1 0.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_efficientnet_b0_test_acc_accepted": {
+      "value": "99.0 \u00b1 0.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_efficientnet_b0_plantdoc_coverage": {
+      "value": "36.6 \u00b1 10.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_efficientnet_b0_plantdoc_acc_accepted": {
+      "value": "63.3 \u00b1 15.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_efficientnet_b0_plantdoc_wrong_rejected": {
+      "value": "74.8 \u00b1 4.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_convnext_tiny_test_coverage": {
+      "value": "95.1 \u00b1 0.8",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_convnext_tiny_test_acc_accepted": {
+      "value": "99.1 \u00b1 0.0",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_convnext_tiny_plantdoc_coverage": {
+      "value": "44.9 \u00b1 26.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_convnext_tiny_plantdoc_acc_accepted": {
+      "value": "76.7 \u00b1 23.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_convnext_tiny_plantdoc_wrong_rejected": {
+      "value": "77.8 \u00b1 11.8",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_yolo26n_test_coverage": {
+      "value": "90.4 \u00b1 2.6",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_yolo26n_test_acc_accepted": {
+      "value": "99.0 \u00b1 0.1",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_yolo26n_plantdoc_coverage": {
+      "value": "22.7 \u00b1 5.4",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_yolo26n_plantdoc_acc_accepted": {
+      "value": "66.3 \u00b1 18.4",
+      "source": "verification/abstention_summary.json"
+    },
+    "abst_yolo26n_plantdoc_wrong_rejected": {
+      "value": "86.9 \u00b1 8.1",
+      "source": "verification/abstention_summary.json"
+    }
+  },
+  "citation_order": [
+    "mohanty2016",
+    "ferentinos2018",
+    "xiang2026",
+    "noyan2022",
+    "geirhos2020",
+    "kapoor2023",
+    "bouthillier2021",
+    "walsh2021dome",
+    "hu2018",
+    "woo2018",
+    "hughes2015",
+    "barbedo2018",
+    "singh2020plantdoc",
+    "ramcharan2019",
+    "shafay2025",
+    "howard2019",
+    "tan2019",
+    "liu2022",
+    "jocher2026",
+    "plantcity2025",
+    "chouhan2019",
+    "loshchilov2019"
+  ],
+  "unused_references": [],
+  "figure_order": [
+    "fig_pipeline",
+    "fig_phytoedge_variants",
+    "fig_three_seed_comparison",
+    "fig_model_comparison_seed42",
+    "fig_learning_curves_seed42",
+    "fig_paired_differences_seed42",
+    "fig_confusion_subset_seed42",
+    "fig_confusion_full_effnet"
+  ],
+  "tables": [
+    "Trainable parameters with the 147-way he",
+    "Three-seed test results (18,148 images, ",
+    "Seed-42 test results (18,148 images, 147",
+    "Model size and inference latency (batch ",
+    "Ablation of PhytoEdge components, seed 4",
+    "Three-seed ablation of PhytoEdge compone",
+    "External probe on 141 unseen PlantDoc im",
+    "Selective prediction with a confidence t",
+    "ONNX FP32 versus static INT8 post-traini"
+  ],
+  "runs_in_manuscript": [
+    "mobilenet_v3_small",
+    "phytoedge_head_only",
+    "phytoedge_attention",
+    "phytoedge_fusion",
+    "phytoedge_net",
+    "efficientnet_b0",
+    "convnext_tiny",
+    "yolo26n"
+  ],
+  "result_freeze": "model_comparison.csv as produced by analyze_results.py in this delivery"
+}

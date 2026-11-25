@@ -1,0 +1,181 @@
+{
+  "source": "PlantDoc-Dataset (pratikkayal), commit 5467f601, train+test folders of 12 mapped classes",
+  "license": "repository states CC BY 4.0",
+  "source_files": 1147,
+  "evaluated_images": 141,
+  "excluded": {
+    "duplicate within PlantDoc": 5,
+    "byte or crop overlap with LeafCare": 1001
+  },
+  "images_per_label": {
+    "apple_scab": 1,
+    "corn_common_rust": 115,
+    "corn_gray_leaf_spot": 3,
+    "grape_black_rot": 1,
+    "potato_early_blight": 4,
+    "potato_late_blight": 4,
+    "squash_powdery_mildew": 2,
+    "tomato_bacterial_spot": 3,
+    "tomato_early_blight": 5,
+    "tomato_late_blight": 3
+  },
+  "summary_mean_sd": {
+    "mobilenet_v3_small": {
+      "accuracy_147way": [
+        0.5271867612293145,
+        0.12890123763797248
+      ],
+      "macro_f1_147way": [
+        0.38150538473334317,
+        0.035716578015204344
+      ],
+      "accuracy_restricted_12way": [
+        0.6572104018912529,
+        0.10455481979903536
+      ],
+      "predicted_same_crop": [
+        0.8817966903073285,
+        0.03569661671522812
+      ]
+    },
+    "phytoedge_head_only": {
+      "accuracy_147way": [
+        0.3333333333333333,
+        0.06303683983911762
+      ],
+      "macro_f1_147way": [
+        0.38583949467636325,
+        0.038497580784139375
+      ],
+      "accuracy_restricted_12way": [
+        0.4444444444444444,
+        0.050316304146082166
+      ],
+      "predicted_same_crop": [
+        0.8699763593380615,
+        0.02952717729739195
+      ]
+    },
+    "phytoedge_attention": {
+      "accuracy_147way": [
+        0.3924349881796691,
+        0.08158597601294279
+      ],
+      "macro_f1_147way": [
+        0.5210099628940509,
+        0.09725091429964164
+      ],
+      "accuracy_restricted_12way": [
+        0.541371158392435,
+        0.06814910309881594
+      ],
+      "predicted_same_crop": [
+        0.8534278959810875,
+        0.03906078402330575
+      ]
+    },
+    "phytoedge_fusion": {
+      "accuracy_147way": [
+        0.3664302600472813,
+        0.06740698548171752
+      ],
+      "macro_f1_147way": [
+        0.4137968888985149,
+        0.037317197024677236
+      ],
+      "accuracy_restricted_12way": [
+        0.5342789598108747,
+        0.09364209134911754
+      ],
+      "predicted_same_crop": [
+        0.8108747044917258,
+        0.04981396573452833
+      ]
+    },
+    "phytoedge_net": {
+      "accuracy_147way": [
+        0.3333333333333333,
+        0.1070898501456844
+      ],
+      "macro_f1_147way": [
+        0.4509264615813749,
+        0.02668610591944245
+      ],
+      "accuracy_restricted_12way": [
+        0.44208037825059104,
+        0.094444370474885
+      ],
+      "predicted_same_crop": [
+        0.8132387706855791,
+        0.017848308357614032
+      ]
+    },
+    "efficientnet_b0": {
+      "accuracy_147way": [
+        0.49881796690307323,
+        0.07104009078636749
+      ],
+      "macro_f1_147way": [
+        0.6031780712981648,
+        0.08434581158140103
+      ],
+      "accuracy_restricted_12way": [
+        0.6335697399527187,
+        0.033516422881224174
+      ],
+      "predicted_same_crop": [
+        0.8865248226950354,
+        0.05354492507284222
+      ]
+    },
+    "convnext_tiny": {
+      "accuracy_147way": [
+        0.5933806146572104,
+        0.3419243992768734
+      ],
+      "macro_f1_147way": [
+        0.5858736657828096,
+        0.09217204387881227
+      ],
+      "accuracy_restricted_12way": [
+        0.7186761229314421,
+        0.253969376717574
+      ],
+      "predicted_same_crop": [
+        0.8108747044917258,
+        0.21748124126916168
+      ]
+    },
+    "yolo26n": {
+      "accuracy_147way": [
+        0.39952718676122934,
+        0.08579313149704046
+      ],
+      "macro_f1_147way": [
+        0.4903729863757887,
+        0.049629130118065634
+      ],
+      "accuracy_restricted_12way": [
+        0.5484633569739953,
+        0.07516838343066026
+      ],
+      "predicted_same_crop": [
+        0.8226950354609929,
+        0.07370428968378205
+      ]
+    }
+  },
+  "effnet_per_label_accuracy_mean_over_seeds": {
+    "apple_scab": 1.0,
+    "corn_common_rust": 0.4811594202898551,
+    "corn_gray_leaf_spot": 0.7777777777777777,
+    "grape_black_rot": 0.6666666666666666,
+    "potato_early_blight": 0.5833333333333334,
+    "potato_late_blight": 0.5,
+    "squash_powdery_mildew": 1.0,
+    "tomato_bacterial_spot": 0.3333333333333333,
+    "tomato_early_blight": 0.20000000000000004,
+    "tomato_late_blight": 0.8888888888888888
+  },
+  "notes": "Mapping from PlantDoc folder names to LeafCare labels is semantic, not expert-adjudicated. 147-way = unrestricted prediction; restricted = argmax among the 12 evaluated labels only. No near-duplicate (descriptor) screening beyond byte and crop hashes."
+}

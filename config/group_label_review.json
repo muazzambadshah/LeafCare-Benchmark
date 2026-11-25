@@ -1,0 +1,16 @@
+{
+  "groups": 176383,
+  "non_singleton_groups": 5139,
+  "mixed_label_groups": 623,
+  "images_in_mixed_label_groups": 1302,
+  "maximum_group_size": 7,
+  "size_histogram": {
+    "1": 171244,
+    "2": 4991,
+    "3": 107,
+    "4": 37,
+    "5": 2,
+    "7": 2
+  },
+  "policy": "Recorded labels are not auto-corrected. Mixed-label similarity components require expert/source review. Group assignment prevents cross-split sharing but does not resolve taxonomy."
+}
