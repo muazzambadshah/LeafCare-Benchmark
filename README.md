@@ -23,3 +23,9 @@ obtained from their original providers; see `supplement/S11_source_archives.csv`
 
 ## Contact
 Muazzam Badshah, NCAI, NUST, Islamabad.
+
+## Reproducibility
+- Frozen image manifest used for every run: SHA-256 `3a791d98f05506375b6fb26504a66897319c362e0667b251d570f9fe2f9cc69f` (also in `config/protocol.json`).
+- Exact Python environment: `requirements-lock.txt` (PyTorch 2.15.0, torchvision 0.29.2, Ultralytics 8.4.202, scikit-learn 1.9.1, ONNX Runtime 1.31.1; WSL Ubuntu, one RTX 4050 Laptop GPU).
+- Checksums of every file in this release: `SHA256SUMS.txt`.
+- The version cited in the paper is release **v1.0**.
